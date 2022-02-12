@@ -1,14 +1,21 @@
 const inquirer = require('inquirer');
 const generateReadMe = require('./src/readme-template.js');
-
-//const readMeContent = generateReadMe(projectName, description, installation, usage, contributing, license, name, githubName, email);
+const { writeFile } = require('./utils/generate-readme.js');
 
 const promptUser = () => {
+    console.log(`
+    =================================================================
+                  Welcome to the README File Generator!
+    Just answers the following questions about your project to begin.
+    =================================================================
+    `);
+    
     return inquirer.prompt([
+
         {
             type: 'input',
             name: 'name',
-            message: 'Hi, what is your name?',
+            message: 'What is your name?',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -123,4 +130,17 @@ const promptUser = () => {
     ]);
 };
 
-promptUser().then(answers => console.log(answers));
+promptUser()
+.then(readMeData => {
+    return generateReadMe(readMeData);
+})
+.then(pageREADME => {
+    console.log(pageREADME);
+    return writeFile(pageREADME);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse);
+})
+.catch(err => {
+    console.log(err);
+});

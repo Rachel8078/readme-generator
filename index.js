@@ -8,42 +8,106 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'name',
-            message: 'Hi, what is your name?'
+            message: 'Hi, what is your name?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your name.');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'githubName',
-            message: 'What is your GitHub username?'
+            message: 'What is your GitHub username?',
+            validate: githubNameInput => {
+                if (githubNameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your GitHub username.');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: 'What is your email address?'
+            message: 'What is your email address?',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email address.');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'projectName',
-            message: 'What is the name of your project?'
+            message: 'What is the name of your project?',
+            validate: projectInput => {
+                if (projectInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your project name.');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'description',
-            message: 'Please describe your project.'
+            message: 'Please describe your project.',
+            validate: descInput => {
+                if (descInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a description of your project.');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'installation',
-            message: 'Please include installation instructions for your project.'
+            message: 'Please include installation instructions for your project.',
+            validate: installInput => {
+                if (installInput) {
+                    return true;
+                } else {
+                    console.log('Please enter installation instructions for your project.');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'Please include usage information for your project.'
+            message: 'Please include usage information for your project.', 
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('Please enter usage information for your project.');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'contributing',
-            message: 'Please include contributing guidelines for your project.'
+            message: 'Please include contributing guidelines for your project.',
+            validate: contributingInput => {
+                if (contributingInput) {
+                    return true;
+                } else {
+                    console.log('Please enter contribution guidelines for your project.');
+                    return false;
+                }
+            }
         },
         {
             type: 'list',

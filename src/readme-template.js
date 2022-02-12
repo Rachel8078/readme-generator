@@ -1,11 +1,11 @@
 module.exports = templateData => {
     console.log(templateData);
-    const { name, githubName, email, projectName, description, installation, usage, contributing, license } = templateData;
+    const { name, githubName, email, projectName, description, installation, usage, contributing, tests, license } = templateData;
     
     return `
 # ${projectName}
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+[![License](https://img.shields.io/badge/License-${license}-blue.svg)](https://opensource.org/licenses/${license})
 
 ## Description
     
@@ -38,18 +38,17 @@ If you created an application or package and would like other developers to cont
 ## License
 
 ${license}
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+${tests}
 
 ## Questions
 
-Contact Information: 
-Name: ${name}
-GitHub Username: ${githubName}
-Email: ${email}
+    Please use following contact information for any questions:
+    Name: ${name}
+    GitHub Link: https://github.com/${githubName}
+    Email: ${email}
     `;
 };
 

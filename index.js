@@ -6,7 +6,7 @@ const promptUser = () => {
     console.log(`
     =================================================================
                   Welcome to the README File Generator!
-    Just answers the following questions about your project to begin.
+       Answer the following questions about your project to begin.
     =================================================================
     `);
     
@@ -67,7 +67,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'description',
-            message: 'Please describe your project.',
+            message: 'Provide a short description explaining the what, why, and how of your project.',
             validate: descInput => {
                 if (descInput) {
                     return true;
@@ -80,7 +80,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'Please include installation instructions for your project.',
+            message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.',
             validate: installInput => {
                 if (installInput) {
                     return true;
@@ -93,7 +93,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'Please include usage information for your project.', 
+            message: 'Provide instructions and examples for use of your project.', 
             validate: usageInput => {
                 if (usageInput) {
                     return true;
@@ -102,6 +102,25 @@ const promptUser = () => {
                     return false;
                 }
             }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmScreenshot',
+            message: 'Would you like to include a screenshot for your project?',
+            when: ({ confirmScreenshot }) => {
+                if (confirmScreenshot) {
+                    return true;
+                    console.log('To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it.')
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Please choose which license your project is covered under.  If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).',
+            choices: ['GNU AGPLv3','GNU GPLv3', 'GNU LGPLv3','Mozilla Public License 2.0','Apache License 2.0','MIT','Boost Software License 1.0', 'The Unlicense']
         },
         {
             type: 'confirm',
@@ -122,11 +141,19 @@ const promptUser = () => {
             }
         },
         {
-            type: 'list',
-            name: 'license',
-            message: 'Please choose which license your project is covered under.',
-            choices: ['MIT', 'GNU GPLv3']
-        }, 
+            type: 'input',
+            name: 'tests',
+            message: 'Please provide tests and examples on how to run them for your application.',
+            validate: testsInput => {
+                if (testsInput) {
+                    return true;
+                } else {
+                    console.log('Please enter tests information for your project.');
+                    return false;
+                }
+            }
+        },
+         
     ]);
 };
 

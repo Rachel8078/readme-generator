@@ -1,9 +1,11 @@
 
-# Readme Generator
+# a
+
+[![License](https://img.shields.io/badge/License-GNU AGPLv3-blue.svg)](https://opensource.org/licenses/GNU AGPLv3)
 
 ## Description
     
-Create file
+a
 
 ## Table of Contents
 
@@ -17,11 +19,11 @@ Create file
 
 ## Installation
 
-Use
+a
 
 ## Usage
 
-n/a
+a
 
 ## Contributing
 
@@ -31,17 +33,16 @@ If you created an application or package and would like other developers to cont
 
 ## License
 
-MIT
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+GNU AGPLv3
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+a
 
 ## Questions
 
 Contact Information: 
-Name: Rachel
-GitHub Username: Rachel8078
-Email: rachelmmarriott@gmail.com
+Name: a
+GitHub Link: https://github.com/a
+Email: a
     

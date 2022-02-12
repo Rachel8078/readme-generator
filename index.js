@@ -97,14 +97,19 @@ const promptUser = () => {
             }
         },
         {
+            type: 'confirm',
+            name: 'confirmContributing',
+            message: 'Would you like to include custom contributing guidelines for your project.',
+            default: true,
+        },
+        {
             type: 'input',
             name: 'contributing',
-            message: 'Please include contributing guidelines for your project.',
-            validate: contributingInput => {
-                if (contributingInput) {
+            message: 'Please list contributing guidelines for your project.',
+            when: ({ confirmContributing }) => {
+                if (confirmContributing) {
                     return true;
                 } else {
-                    console.log('Please enter contribution guidelines for your project.');
                     return false;
                 }
             }

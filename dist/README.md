@@ -1,11 +1,11 @@
 
-# a
+# rachel
 
-[![License](https://img.shields.io/badge/License-GNU AGPLv3-blue.svg)](https://opensource.org/licenses/GNU AGPLv3)
+[![License](https://img.shields.io/badge/License-The_Unlicense-blue.svg)](https://opensource.org/licenses/The-Unlicense)
 
 ## Description
     
-a
+rachel
 
 ## Table of Contents
 
@@ -19,30 +19,28 @@ a
 
 ## Installation
 
-a
+rachel
 
 ## Usage
 
-a
+Rachel
 
 ## Contributing
 
-undefined
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+rachel
 
 ## License
 
-GNU AGPLv3
+The Unlicense
 
 ## Tests
 
-a
+rachel
 
 ## Questions
 
-Contact Information: 
-Name: a
-GitHub Link: https://github.com/a
-Email: a
+### Please use following contact information for any questions:
+- Name: Rachel
+- GitHub Link: https://github.com/rachel
+- Email: rachel
     

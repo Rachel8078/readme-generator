@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const generateReadMe = require('./src/readme-template.js');
 const { writeFile } = require('./utils/generate-readme.js');
 
+// function that initializes and contains questions
 const promptUser = () => {
     console.log(`
     =================================================================
@@ -10,8 +11,8 @@ const promptUser = () => {
     =================================================================
     `);
     
+    // start inquirer question prompt
     return inquirer.prompt([
-
         {
             type: 'input',
             name: 'name',
@@ -20,7 +21,7 @@ const promptUser = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log('Please enter your name.');
+                    console.log('(Required)');
                     return false;
                 }
             }
@@ -33,7 +34,7 @@ const promptUser = () => {
                 if (githubNameInput) {
                     return true;
                 } else {
-                    console.log('Please enter your GitHub username.');
+                    console.log('(Required)');
                     return false;
                 }
             }
@@ -46,7 +47,7 @@ const promptUser = () => {
                 if (emailInput) {
                     return true;
                 } else {
-                    console.log('Please enter your email address.');
+                    console.log('(Required)');
                     return false;
                 }
             }
@@ -59,7 +60,7 @@ const promptUser = () => {
                 if (projectInput) {
                     return true;
                 } else {
-                    console.log('Please enter your project name.');
+                    console.log('(Required)');
                     return false;
                 }
             }
@@ -72,7 +73,7 @@ const promptUser = () => {
                 if (descInput) {
                     return true;
                 } else {
-                    console.log('Please enter a description of your project.');
+                    console.log('(Required)');
                     return false;
                 }
             }
@@ -80,12 +81,12 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.',
+            message: 'What are the steps required to install your project?',
             validate: installInput => {
                 if (installInput) {
                     return true;
                 } else {
-                    console.log('Please enter installation instructions for your project.');
+                    console.log('(Required)');
                     return false;
                 }
             }
@@ -93,25 +94,12 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'Provide instructions and examples for use of your project.', 
+            message: 'Provide usage instructions and examples for your project.', 
             validate: usageInput => {
                 if (usageInput) {
                     return true;
                 } else {
-                    console.log('Please enter usage information for your project.');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'confirm',
-            name: 'confirmScreenshot',
-            message: 'Would you like to include a screenshot for your project?',
-            when: ({ confirmScreenshot }) => {
-                if (confirmScreenshot) {
-                    return true;
-                    console.log('To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it.')
-                } else {
+                    console.log('(Required)');
                     return false;
                 }
             }
@@ -119,23 +107,18 @@ const promptUser = () => {
         {
             type: 'list',
             name: 'license',
-            message: 'Please choose which license your project is covered under.  If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).',
-            choices: ['GNU AGPLv3','GNU GPLv3', 'GNU LGPLv3','Mozilla Public License 2.0','Apache License 2.0','MIT','Boost Software License 1.0', 'The Unlicense']
-        },
-        {
-            type: 'confirm',
-            name: 'confirmContributing',
-            message: 'Would you like to include custom contributing guidelines for your project.',
-            default: true,
+            message: 'Please choose which license your project is covered under.',
+            choices: ['MIT', 'Apache 2.0', 'MPL 2.0', 'The Unlicense','GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Boost Software License 1.0']
         },
         {
             type: 'input',
             name: 'contributing',
-            message: 'Please list contributing guidelines for your project.',
-            when: ({ confirmContributing }) => {
-                if (confirmContributing) {
+            message: 'Please include contributing guidelines for your project.',
+            validate: contributingInput => {
+                if (contributingInput) {
                     return true;
                 } else {
+                    console.log('(Required)');
                     return false;
                 }
             }
@@ -148,7 +131,7 @@ const promptUser = () => {
                 if (testsInput) {
                     return true;
                 } else {
-                    console.log('Please enter tests information for your project.');
+                    console.log('(Required)');
                     return false;
                 }
             }
@@ -157,10 +140,13 @@ const promptUser = () => {
     ]);
 };
 
+// function call to begin app
 promptUser()
+// send answers to questions to readme file template
 .then(readMeData => {
     return generateReadMe(readMeData);
 })
+// write the readme file and insert in dist folder
 .then(pageREADME => {
     console.log(pageREADME);
     return writeFile(pageREADME);
@@ -168,6 +154,7 @@ promptUser()
 .then(writeFileResponse => {
     console.log(writeFileResponse);
 })
+// catch errors
 .catch(err => {
     console.log(err);
 });

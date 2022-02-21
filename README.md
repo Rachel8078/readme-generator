@@ -11,9 +11,10 @@ This app provides developers with a quick way to generate README.md files for th
 * JavaScript
 
 ## GitHub Link
-https://rachel8078.github.io/weather-dashboard/
+https://github.com/Rachel8078/readme-generator
 
-## Screenshots
+## Screenshot
 ![](./assets/images/readme-generator.png)
 
-
+## Contribution
+Made by Rachel Marriott

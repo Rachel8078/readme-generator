@@ -108,7 +108,7 @@ const promptUser = () => {
             type: 'list',
             name: 'license',
             message: 'Please choose which license your project is covered under.',
-            choices: ['MIT', 'Apache 2.0', 'MPL 2.0', 'The Unlicense','GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Boost Software License 1.0']
+            choices: ['MIT', 'Apache 2.0', 'MPL 2.0', 'The Unlicense','Boost Software License 1.0']
         },
         {
             type: 'input',

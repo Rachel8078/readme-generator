@@ -1,11 +1,11 @@
 
-# 1
+# Readme Generator
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
     
-1
+Easily create a readme for projects simply by answering questions in app.
 
 ## Table of Contents
 
@@ -19,28 +19,28 @@
 
 ## Installation
 
-1
+Pull from GitHub and npm install.
 
 ## Usage
 
-1
+When you need to create a readme.md file for your software, simply run the app and answer the questions.
 
 ## Contributing
 
-1
+Standard guidelines.
 
 ## License
 
-Apache 2.0
+MIT
 
 ## Tests
 
-1
+Answer questions in console.
 
 ## Questions
 
 ### Please use following contact information for any questions:
-- Name: 1
-- GitHub Link: https://github.com/1
-- Email: 1
+- Name: Rachel Marriott
+- GitHub Link: https://github.com/Rachel8078
+- Email: rachelmmarriott@gmail.com
     
